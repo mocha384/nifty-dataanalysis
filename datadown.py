@@ -13,12 +13,12 @@ def datadown():
         line = line.strip()
         fullurl = url1 + line
         #print line
-        
+
         #make a text file name
         parts = line.split('.')    
         filename = dest_folder + parts[0] + '.txt'
         print filename
-        
+
         #if the data is already downloaded, do not download it again
         if not path.exists(filename): 
             response = urllib2.urlopen(fullurl)
@@ -27,6 +27,6 @@ def datadown():
             savefile.close()
 
     symfile.close()
-    
+
 if __name__ == '__main__':
     datadown()
